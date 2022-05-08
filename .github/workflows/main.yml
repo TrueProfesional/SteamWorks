@@ -106,4 +106,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: TrueSteamWorks
-        path: build/package/
+        path: package/addons/sourcemod/extensions
