@@ -101,11 +101,9 @@ jobs:
         ambuild
     - name: Zip Release
       working-directory: ./sm-environment
-      run: ${{ matrix.zip_cmd }}                  
-    - name: Release
-      uses: svenstaro/upload-release-action@v2
+      run: ${{ matrix.zip_cmd }}        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ${{ github.workspace }}/sm-environment/package.zip
-        asset_name: ${{ matrix.asset_name }}.zip
-        tag: ${{ github.ref }}    
+        name: TrueSteamWorks
+        path: build/package.zip
