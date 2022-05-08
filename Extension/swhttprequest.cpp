@@ -132,6 +132,8 @@ static cell_t sm_CreateHTTPRequest(IPluginContext *pContext, const cell_t *param
 
 	char *pURL;
 	pContext->LocalToString(params[2], &pURL);
+	
+	printf("[TrueSteamWorks 1.0] sm_CreateHTTPRequest: %s\n", pURL);
 
 	HTTPRequestHandle request = pHTTP->CreateHTTPRequest(static_cast<EHTTPMethod>(params[1]), pURL);
 	if (request == INVALID_HTTPREQUEST_HANDLE)
