@@ -105,5 +105,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: TrueSteamWorks
-        path: package/addons/sourcemod/extensions
+        name: TrueSteamWorks ${{ matrix.node-version }}
+        path: ${{ github.workspace }}
